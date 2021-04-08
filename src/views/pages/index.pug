@@ -1,0 +1,28 @@
+extends ../templates/template
+
+block content
+    main.main
+        .benefits
+            article.benefit
+                .benefit__top
+                     picture.benefit__picture
+                        source.benefit__source(media="(min-width: 800px)")#slider-source
+                        img.benefit__image#slider-image
+                     .benefit__navigation#slider-navigation
+                        button.benefit__button(aria-label="Previous article", data-type="prev")
+                        button.benefit__button.benefit__button--next(aria-label="Next article", data-type="next")
+                .benefit__body#slider
+                    template#template
+                        h2.benefit__title
+                        p.benefit__text
+                        a.benefit__link(href="#") Shop now
+
+
+        .about
+            img.about__image(src="assets/images/image-about-dark.jpg" alt="furniture")
+
+            .about__card
+                h2.about__title About our furniture
+                p.about__text Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.
+
+            img.about__image(src="assets/images/image-about-light.jpg" alt="furniture")

@@ -1,0 +1,41 @@
+@use "../abstracts/vars/colors" as c;
+
+.about{
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 575px 1fr;
+    margin-top: -4px;
+  }
+
+  &__image{
+    width: 100%;
+  }
+
+  &__card{
+    padding: 3.75rem 1.875rem;
+
+    @media screen and (min-width: 1200px) {
+      padding: 4.375rem 2.8rem;
+    }
+  }
+
+  &__title{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
+
+  &__text{
+    color: c.$dark-gray;
+    font-size: 0.7rem;
+    line-height: 2;
+    margin-bottom: 0;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 0.72rem;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.top-bar
+    button.top-bar__button#menu-button(aria-label="Open menu"): span.top-bar__icon
+    img.top-bar__logo(src="../assets/images/logo.svg")
+nav
+    ul.menu#menu
+        each page in pages
+            li.menu__item: a.menu__link(href=page.url)= page.title

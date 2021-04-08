@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room homepage</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="top-bar">
+        <button class="top-bar__button" id="menu-button" aria-label="Open menu"><span class="top-bar__icon"></span></button><img class="top-bar__logo" src="../assets/images/logo.svg">
+      </div>
+      <nav>
+        <ul class="menu" id="menu">
+          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Shop</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="benefits">
+        <article class="benefit">
+          <div class="benefit__top">
+            <picture class="benefit__picture">
+              <source class="benefit__source" media="(min-width: 800px)" id="slider-source"><img class="benefit__image" id="slider-image">
+            </picture>
+            <div class="benefit__navigation" id="slider-navigation">
+              <button class="benefit__button" aria-label="Previous article" data-type="prev"></button>
+              <button class="benefit__button benefit__button--next" aria-label="Next article" data-type="next"></button>
+            </div>
+          </div>
+          <div class="benefit__body" id="slider">
+            <template id="template">
+              <h2 class="benefit__title"></h2>
+              <p class="benefit__text"></p><a class="benefit__link" href="#">Shop now</a>
+            </template>
+          </div>
+        </article>
+      </div>
+      <div class="about"><img class="about__image" src="assets/images/image-about-dark.jpg" alt="furniture">
+        <div class="about__card">
+          <h2 class="about__title">About our furniture</h2>
+          <p class="about__text">Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.</p>
+        </div><img class="about__image" src="assets/images/image-about-light.jpg" alt="furniture">
+      </div>
+    </main>
+    <script src="js/scripts-min.js"></script>
+  </body>
+</html>

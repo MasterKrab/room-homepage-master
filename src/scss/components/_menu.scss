@@ -1,0 +1,142 @@
+@use "../abstracts/vars/colors" as c;
+
+.top-bar{
+  display: flex;
+  align-items: center;
+
+  &__logo{
+    margin-left: auto;
+    margin-right: auto;
+    width: 63px;
+  }
+
+  &__button{
+    width: 23px;
+    height: 20px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    border: none;
+    padding: 0;
+    background: none;
+    margin-right: auto;
+    position: absolute;
+    z-index: 1000;
+
+    @media screen and (min-width: 1024px){
+      display: none;
+    }
+
+    &:focus{
+      outline: 2px dashed c.$dark-gray;
+      outline-offset: 0.15rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  &__icon,
+  &__icon::before,
+  &__icon::after{
+    width: 20px;
+    height: 2px;
+    background-color: c.$white;
+    border-radius: 1rem;
+  }
+
+  &__icon{
+    position: relative;
+    transition: transform .5s;
+
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      transition: transform .5s;
+    }
+
+    &::after{
+      top: -5px;
+      transition: opacity .5s, transform .5s;
+    }
+
+    &--active{
+      transform: rotate(45deg);
+
+      &,
+      &::before,
+      &::after{
+        background-color: c.$dark-gray;
+      }
+
+      &::before{
+        transform: rotate(90deg) translateX(-5px);
+      }
+
+      &::after{
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.menu{
+  display: flex;
+  gap: 1.9rem;
+  list-style: none;
+
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+    top: -13px;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background-color: c.$white;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    display: none;
+    padding-right: 1.6rem;
+    font-size: 0.8rem;
+
+    &--active{
+      display: flex;
+    }
+  }
+
+  &__item{
+    color: c.$black;
+    text-transform: lowercase;
+    margin-bottom: 0.5rem;
+
+    @media screen and (min-width: 1024px) {
+      color: c.$white;
+      margin-bottom: 0;
+      position: relative;
+
+      &::after{
+        content: "";
+        background-color: c.$white;
+        width: 50%;
+        height: 2px;
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+
+      &:hover::after{
+        transform: translateX(-50%) scaleX(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link{
+    color: inherit;
+    text-decoration: none;
+  }
+}
